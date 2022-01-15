@@ -1,0 +1,9 @@
+import {ClashClient} from "./ClashAPi/ClashCLient.js"
+import {ClanData, PlayerData, SearchFilter} from "../src/types/classes"
+
+const app = new ClashClient("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNjMjMwMmFmLWY2MmUtNGNmYi1iNjhlLTZiZWE2MTcxZjU0YSIsImlhdCI6MTY0MDk5NjcxNSwic3ViIjoiZGV2ZWxvcGVyL2ZmOTQ4ZmM0LTdjMWEtMDkwNy0yNjk3LTNmODc5Y2M5MGRjNSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEwOS42Mi42OS42NSJdLCJ0eXBlIjoiY2xpZW50In1dfQ.Xe0xiRZJ9JCt7NaW3XM35VsTvb3XJqmIkkWpvKUpbIY3AJSS1O49HwMrFUQYrJ-bN4KgdT9xgrt1sP_kupMeoA")
+
+const clan = await app.fetchClan("#28PV8G2Y0")
+const player = await app.fetchPlayer("#QPV8PYQ8G")
+
+console.log(clan)
