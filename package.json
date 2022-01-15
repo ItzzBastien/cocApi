@@ -10,7 +10,8 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "install": "npm install axios"
   },
   "dependencies": {
     "axios": "^0.24.0"
