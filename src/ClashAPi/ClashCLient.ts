@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios, { AxiosResponse } from "axios"
 import { ClanData, PlayerData } from "../types/classes"
 import { Clan } from "./Global/Clan.js"
 import { Player } from "./Global/Player.js"
@@ -60,5 +60,14 @@ export class ClashClient {
             responseType: "json"
         })
         return new Player(response.data)
+    }
+
+    async getGoldPass(): Promise<AxiosResponse<any, any>> {
+
+        const response = await axios.get(`https://api.clashofclans.com/v1/goldpass/seasons/current`, {
+            headers: {"Authorization":`Bearer ${this.apiToken}`},
+            responseType: "json"
+        })
+        return response
     }
 }

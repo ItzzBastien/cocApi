@@ -302,3 +302,4 @@ dist/ClashAPi/Global/Clan.js
 dist/ClashAPi/Global/GlobalBase.js
 dist/ClashAPi/Global/Player.d.ts
 dist/ClashAPi/Global/Player.js
+src/index.ts

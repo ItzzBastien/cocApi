@@ -17,6 +17,12 @@ export class Clan {
     warLosses: number
     warLeague: { id: number; name: string }
     isWarLogPublic: boolean
+    badgeUrls: { small: string; large: string; medium: string }
+    type: string
+    clanPoints: number
+    labels: { id: number; name: string; iconUrls: object }[]
+    location: { id: number; name: string; isCountry: boolean; countryCode: string }
+    warFrequency: string
 
     constructor(data: ClanData){
         this.#data = data
@@ -34,5 +40,11 @@ export class Clan {
         this.warLosses = data.warLosses
         this.warLeague = data.warLeague
         this.isWarLogPublic = data.isWarLogPublic
+        this.badgeUrls = data.badgeUrls
+        this.type = data.type
+        this.clanPoints = data.clanPoints
+        this.labels = data.labels
+        this.location = data.location
+        this.warFrequency = data.warFrequency
     }
 }
