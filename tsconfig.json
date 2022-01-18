@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "target": "ESNext",
+        "outDir": "dist",
+        "module": "ESNext",
+        "noEmitOnError": true,
+        "moduleResolution": "node",
+        "types": [],
+    },
+    "files": [
+        "src/index.ts"
+    ],
+    "include": [
+        "src/types/classes.d.ts"
+    ]
+}

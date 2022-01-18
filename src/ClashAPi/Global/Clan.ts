@@ -1,3 +1,4 @@
+import axios from "axios"
 import { ClanData, ClanMembers } from "../../types/classes"
 
 export class Clan {
@@ -23,8 +24,10 @@ export class Clan {
     labels: { id: number; name: string; iconUrls: object }[]
     location: { id: number; name: string; isCountry: boolean; countryCode: string }
     warFrequency: string
+    #apiToken: string
 
-    constructor(data: ClanData){
+    constructor(data: ClanData, apiToken:string){
+        this.#apiToken = apiToken
         this.#data = data
         this.memberList = data.memberList
         this.members = data.members
@@ -46,5 +49,13 @@ export class Clan {
         this.labels = data.labels
         this.location = data.location
         this.warFrequency = data.warFrequency
+    }
+    
+    async getCurrentWar(){
+        const response = axios.get(`https://api.clashofclans.com/v1/clans/${this.tag.slice(1)}/currentwar`, {
+            headers: {"Authorization":`Bearer ${this.#apiToken}`},
+            responseType: 'json',
+        }).catch(err => console.log("Can't fetch war for this clan"))
+        return response
     }
 }

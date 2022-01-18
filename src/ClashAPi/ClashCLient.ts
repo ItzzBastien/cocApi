@@ -35,7 +35,7 @@ export class ClashClient {
             headers: {"Authorization":`Bearer ${this.apiToken}`},
             responseType: 'json'
         })
-        return new Clan(response.data)
+        return new Clan(response.data, this.apiToken)
     }
 
     /**
