@@ -7,11 +7,7 @@
         "noEmitOnError": true,
         "moduleResolution": "node",
         "types": [],
+        "declaration": true,
+        "rootDir": "src"
     },
-    "files": [
-        "src/index.ts"
-    ],
-    "include": [
-        "src/types/classes.d.ts"
-    ]
 }

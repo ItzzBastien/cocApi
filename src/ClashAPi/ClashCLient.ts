@@ -17,7 +17,7 @@ export class ClashClient {
      * @param clanTag The tag of a clan
      * @returns A clan with data
      */
-    async fetchClan(clanTag: string): Promise<Clan> {
+    fetchClan = async (clanTag: string): Promise<Clan> => {
 
         let clanRequest = clanTag
         const regex: RegExp = /^#[A-Z0-9]{5,12}$/
@@ -43,7 +43,7 @@ export class ClashClient {
      * @param playerTag The tag of a player
      * @returns A Player with data
      */
-    async fetchPlayer(playerTag: string): Promise<Player>{
+    fetchPlayer = async (playerTag: string): Promise<Player> =>{
 
         let playerRequest = playerTag
         const regex: RegExp = /^#[A-Z0-9]{5,12}$/
@@ -63,10 +63,9 @@ export class ClashClient {
     }
 
     /**
-     * 
      * @returns The date of start/end of the current goldPass
      */
-    async getGoldpassDate(): Promise<Date> {
+    getGoldpassDate = async(): Promise<Date> => {
 
         const response = await axios.get(`https://api.clashofclans.com/v1/goldpass/seasons/current`, {
             headers: {"Authorization":`Bearer ${this.apiToken}`},

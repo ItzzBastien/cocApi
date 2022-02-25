@@ -51,7 +51,7 @@ export class Clan {
         this.warFrequency = data.warFrequency
     }
     
-    async getCurrentWar(){
+    getCurrentWar = () => {
         const response = axios.get(`https://api.clashofclans.com/v1/clans/${this.tag.slice(1)}/currentwar`, {
             headers: {"Authorization":`Bearer ${this.#apiToken}`},
             responseType: 'json',

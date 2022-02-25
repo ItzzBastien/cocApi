@@ -46,11 +46,11 @@ export class Clan {
         this.location = data.location;
         this.warFrequency = data.warFrequency;
     }
-    async getCurrentWar() {
+    getCurrentWar = () => {
         const response = axios.get(`https://api.clashofclans.com/v1/clans/${this.tag.slice(1)}/currentwar`, {
             headers: { "Authorization": `Bearer ${this.#apiToken}` },
             responseType: 'json',
         }).catch(err => console.log("Can't fetch war for this clan"));
         return response;
-    }
+    };
 }
